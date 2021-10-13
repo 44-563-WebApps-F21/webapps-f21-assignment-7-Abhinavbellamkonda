@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Reaction game</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: lightgoldenrodyellow;color: #000;">
+
+  <h2 style="font-family: Arial, Helvetica, sans-serif;">Abhinav Bellmakonda Reaction Timer</h2>
+  <p id="target">Your time</p>
+  <p id="countdown">Count</p>
+
+  <button type="button" class="btn btn-primary" onclick="startTime()">Start Timer</button>
+  <button type="button" class="btn btn-primary" onclick="recordReact()">React Now</button>
+  
+  <script> 
+    var myTime=undefined;
+    function recordReact() {
+            
+            myTime = Date.now();
+            console.log("Current Time in milliseconds is: " + myTime);
+  
+          }
+          function startTime() 
+          {
+              myTime = undefined;
+              buttonTime = Date.now();
+  
+              for(let k=0;k<4;k++)
+              {
+                setTimeout(() => {
+                    document.getElementById("countdown").innerHTML = k;
+                  }, (3-k)*1000);
+              }
+  
+                setTimeout(() => {
+                  if(myTime == undefined)
+                  {
+                    document.getElementById("target").innerHTML = "Too Slow";
+                  }
+                  
+                  else
+                  {
+                    let elapsedTime = (-1) * (buttonTime - myTime);
+                    document.getElementById("target").innerHTML = "Time was " + elapsedTime;
+                  }
+                }, 
+                3000)
+              }
+  
+   
+    </script>
+  
+  </body>
+  </html>
