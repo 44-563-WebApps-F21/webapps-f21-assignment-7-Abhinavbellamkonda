@@ -38,41 +38,90 @@
         Bellamkonda</h1><br>
     
         <div class="style">&nbsp;Click on the squares to search for wild life</div>
-        <div class="style" id="tries==">&nbsp;&nbsp;&nbsp;Number of tries is zero.</div>
+        <div class="style" style="background-color: lightcoral;color: #000;" id="tries">&nbsp;&nbsp;&nbsp;Number of tries is zero.</div>
         <div class="style" id="distance">&nbsp;&nbsp;&nbsp;Distance is unknown.</div><br>
     
         <div class="row">
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-1"  onclick="check(0)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-2"  onclick="check(1)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-3"  onclick="check(2)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-4"  onclick="check(3)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-5"  onclick="check(4)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-6"  onclick="check(5)"></div>
         </div>
         <div class="row">
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-7"  onclick="check(6)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-8"  onclick="check(7)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-9"  onclick="check(8)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-10" onclick="check(9)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-11" onclick="check(10)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-12" onclick="check(11)"></div>
         </div>
         <div class="row">
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-13" onclick="check(12)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-14" onclick="check(13)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-15" onclick="check(14)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-16" onclick="check(15)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-17" onclick="check(16)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-18" onclick="check(17)"></div>
         </div>
         <div class="row">
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
-            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-19" onclick="check(18)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-20" onclick="check(19)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-21" onclick="check(20)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-22" onclick="check(21)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-23" onclick="check(22)"></div>
+            <div class="col-sm-2"><img src="bush.jpg" alt="Image bush" id="bush-24" onclick="check(23)"></div>
         </div>
+
+
+        <script>
+           var ids = ["bush-1","bush-2","bush-3","bush-4","bush-5","bush-6","bush-7","bush-8","bush-9","bush-10","bush-11","bush-12","bush-13","bush-14","bush-15","bush-16","bush-17","bush-18","bush-19","bush-20","bush-21","bush-22","bush-23","bush-24",];
+        
+        var triesCount = 0;
+        var animalLocation = 13;
+    
+        function check(position) {
+        var id = ids[position]
+          img_src = document.getElementById(id)
+          if (position == animalLocation) {
+            img_src.src = "animal.jpeg"
+          } else {
+            img_src.src = "dirt.jpg"
+          }
+    
+          triesCount++
+    
+          document.getElementById("tries").innerHTML = "Number of tries is " + triesCount ;
+          document.getElementById("distance").innerHTML = "Distance is " + distance(position, animalLocation);
+
+
+
+          
+        }
+            
+            function distance(loc1, loc2) {
+                var a = Math.abs(getPosition(loc1)[0]-getPosition(loc2)[0])
+                var b = Math.abs(getPosition(loc1)[1]-getPosition(loc2)[1])
+                if(a > b)
+                    return a
+                else
+                    return b
+            }
+            function getPosition(value) {
+                var elementValue = 0
+                for(var i=0; i<4; i++){
+                    for(var j=0; j<6; j++){
+                        if(elementValue == value){
+                            return [i+1, j+1]
+                        }
+                        elementValue++
+                    }
+                }
+            }
+           
+            </script>
+        
         
 </body>
 
