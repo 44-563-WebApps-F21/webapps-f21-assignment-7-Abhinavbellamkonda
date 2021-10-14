@@ -30,12 +30,13 @@
           {
               myTime = undefined;
               buttonTime = Date.now();
-  
-              for(let k=0;k<4;k++)
+              var random_no = Math.floor(Math.random() * 10) + 2;
+
+              for(let k=0;k<random_no;k++)
               {
                 setTimeout(() => {
                     document.getElementById("countdown").innerHTML = k;
-                  }, (3-k)*1000);
+                  }, (random_no-k)*1000);
               }
   
                 setTimeout(() => {
@@ -46,12 +47,14 @@
                   
                   else
                   {
-                    let elapsedTime = (-1) * (buttonTime - myTime);
+                    let elapsedTime = (-1)* (buttonTime - myTime);
                     document.getElementById("target").innerHTML = "Time was " + elapsedTime;
                   }
-                }, 
-                3000)
+                },3000);
+
               }
+            
+              
   
    
     </script>
