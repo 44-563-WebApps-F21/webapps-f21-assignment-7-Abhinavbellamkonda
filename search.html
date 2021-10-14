@@ -33,7 +33,7 @@
     </style>
 </head>
 
-<body>
+<body style="background-color: linen;">
     <h1 class="hover">Animal Hunt by Abhinav
         Bellamkonda</h1><br>
     
@@ -80,6 +80,8 @@
         
         var triesCount = 0;
         var animalLocation = 13;
+        var id;
+        var animalLocation = Math.floor(Math.random() * ids.length)
     
         function check(position) {
         var id = ids[position]
@@ -93,11 +95,7 @@
           triesCount++
     
           document.getElementById("tries").innerHTML = "Number of tries is " + triesCount ;
-          document.getElementById("distance").innerHTML = "Distance is " + distance(position, animalLocation);
-
-
-
-          
+          document.getElementById("distance").innerHTML = "Distance is " + distance(position, animalLocation);  
         }
             
             function distance(loc1, loc2) {
@@ -119,7 +117,18 @@
                     }
                 }
             }
-           
+            function resetTriesAndLocation() {
+            triesCount = 0;
+            animalLocation = Math.round(Math.random() * (23));
+            document.getElementById("tries").innerHTML = "Number of tries is zero";
+            distanceOfAnimal = "unknown"
+            document.getElementById("distance").innerHTML = "Distance is " + distanceOfAnimal;
+            for (var i = 0; i < 24; i++) {
+
+                document.getElementById(ids[i]).src ="bush.jpg";
+            }
+
+        }
             </script>
         
         
