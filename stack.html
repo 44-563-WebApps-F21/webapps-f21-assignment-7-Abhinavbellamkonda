@@ -23,17 +23,18 @@
                 background-color: rgb(61, 182, 168);
             }
         }
-     .mybutton{
-        background-color: #89cdee; 
-  border-radius: 8px;
-  color: rgb(14, 11, 11);
-  padding: 10px 20px;
-  text-align: center;
-  display: inline-block;
-  font-size: 10px;
 
-     }
-     </style>
+        .mybutton {
+            background-color: #89cdee;
+            border-radius: 8px;
+            color: rgb(14, 11, 11);
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            font-size: 10px;
+
+        }
+    </style>
 </head>
 
 <body style="background-color: lightgrey;">
@@ -59,8 +60,7 @@
         element.className = "stack"
         document.getElementById('target').appendChild(element)
     }
-    function popItem() 
-    {
+    function popItem() {
         var stack_items = document.getElementsByClassName("stack")
         var slength = stack_items.length
         if (slength > 0)
@@ -69,31 +69,31 @@
     function zap() {
         var stack_items = document.getElementsByClassName("stack")
         let input = document.getElementById("inputElement").value
-        if (stack_items != undefined && stack_items.length > 0) 
-        {
-            for (let i = 0; i < stack_items.length; i++)
-             {
-                if (stack_items[i].innerHTML == input) 
-                {
+        if (stack_items != undefined && stack_items.length > 0) {
+            for (let i = 0; i < stack_items.length; i++) {
+                if (stack_items[i].innerHTML == input) {
                     var itemToBeRemoved = stack_items[i].innerHTML
                     stack_items[i].remove()
                     console.log(itemToBeRemoved)
                     i--
                 }
             }
-        }   
-    }   
+        }
+    }
 
-    function unique(){
+    function unique() {
         var stack_items = document.getElementsByClassName("stack")
-		for(var m=0; m<stack_items.length; m++){
-			for(var n=m+1; n<stack_items.length; n++){
-                if(stack_items[m].innerHTML == stack_items[n].innerHTML){
+        for (var m = 0; m < stack_items.length; m++)
+         {
+            for (var n = m + 1; n < stack_items.length; n++) 
+            {
+                if (stack_items[m].innerHTML == stack_items[n].innerHTML)
+                 {
                     stack_items[n].remove()
-                    n--;m--
+                    n--; m--
                 }
             }
-		}
+        }
     }
 </script>
 
